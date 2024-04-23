@@ -318,6 +318,20 @@
 
 
 
+### 标记定位
+
+
+
+- `'` ：跳转到标记的⾏
+- ` ：跳转到标记的位置(⾏和列)
+
+
+
+- `m` + [小写字母]：只可在单个文件内跳转的标记；后面的为标记的标识符，用于跳转的指向；可以理解为当前标记的名字；下同
+- `m` + [大写字母]：可在多个文件之间跳转的标记
+
+比如我们在某个位置执行 `mm`，然后在本文件中的其他位置只要使用 `'m` 就可以跳到标记的行，使用 ``m` 就可以跳到标记的行和列；当然我们也可以用其他字母如 `mf`，当相应的跳转命令也变成 `'f` 和  <code>`f</code>
+
 
 
 ## 操作符(Operator)
@@ -477,6 +491,8 @@ vim 中的文本对象主要有这一些：
 | `<leader><leader> b`        | Start of word backwards  |
 | `<leader><leader> e`        | End of word forwards  	 |
 | `<leader><leader> ge`       | End of word backwards |
+
+![image-20240409225215711](C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240409225215711.png)
 
 ### [vim-surround](https://github.com/VSCodeVim/Vim?tab=readme-ov-file#vim-surround)
 

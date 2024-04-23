@@ -254,7 +254,7 @@ git rm <file>
 > If you modified the file ==or== had already added it to the staging area, you must force the removal with the `-f` option.
 
 ~~~
-git rm <file>
+git rm -f <file>
 ~~~
 
 
@@ -464,6 +464,32 @@ git merge <branchName>
 
 
 
+
+## Git clone
+
+[clone](https://git-scm.com/docs/git-clone/zh_HANS-CN)
+
+[相关](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF)
+
+将存储库克隆到新创建的目录中，为克隆存储库中的每个分支创建远程跟踪分支（使用`git branch --remotes`可见），并在根据远程库的HEAD指向在本地创建一个新的分支, 将本地的HEAD指向该分支.
+
+
+
+由于远程仓库的HEAD指向一般默认都是master或main, 所以clone之后本地只会有一个分支(master或main), 如果想指定本地分支为远端某一特定分支,使用:
+
+> git clone -b <远端分支名称>
+
+比如:
+
+<img src="C:\Users\86187\Desktop\instructions\Git使用说明.assets\image-20240421000435454.png" alt="image-20240421000435454" style="zoom:50%;" />
+
+远端有两个分支:main edit
+
+使用git clone 在本地创建的分支是main, 如果想创建edit , 使用:
+
+> git clone -b edit <Url>
+
+当然, 即使clone的时候没有指定edit, 也可以之后使用 `git checkout edit` 这样会新创建一个edit分支并跟踪远端的edit.
 
 
 

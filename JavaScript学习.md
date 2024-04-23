@@ -408,6 +408,7 @@ console.log(Object.getPrototypeOf(box1))
 
 ~~~javascript
 class MyClass {
+    something   //实例的   
   constructor(name, age) {
     this.name = name;   //实例的
     this.age = age;		//实例的
@@ -416,8 +417,8 @@ class MyClass {
     }
   }
   sayHi = () => { console.log('Hi') }   //实例的,因为这实际上是把一个匿名函数赋给了名叫sayHi的属性
-  sayHello() {   	//属于Prototype
-    console.log("Hello")
+  sayGoodbye() {   	//属于Prototype
+    console.log("Goodbye")
   }
 }
 ~~~
@@ -505,6 +506,35 @@ class Box {
 
 
 
+### 示例
+
+~~~javascript
+// 模拟一个异步函数，返回一个 Promise 对象
+function fetchData() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Data fetched successfully');
+    }, 2000); // 模拟异步操作，2秒后解析 Promise
+  });
+}
+
+// 异步函数，使用 await 等待 fetchData 函数的结果
+async function getData() {
+  console.log('Fetching data...');
+  const result = await fetchData(); // 使用 await 等待 fetchData 函数的结果
+  console.log(result); // 当 Promise 解析后，继续执行后续代码
+  console.log(555)
+}
+
+console.log('Start');
+getData();
+console.log('End');
+~~~
+
+![image-20240413234839769](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240413234839769.png)
+
+
+
 ### 讲解
 
 [前端面试题：JavaScript运行机制（三）宏任务微任务](https://www.bilibili.com/video/BV1Av411n77n/?share_source=copy_web&vd_source=b23f8a9cd162ff7a94424d5480360ac9)
@@ -524,6 +554,171 @@ class Box {
 # ES6
 
 [ES6教程](https://wangdoc.com/es6/)
+
+
+
+## Class
+
+
+
+ES6 的类，完全可以看作构造函数的另一种写法。
+
+```javascript
+class Point {
+  // ...
+}
+
+typeof Point // "function"
+Point === Point.prototype.constructor // true
+```
+
+上面代码表明，类的数据类型就是函数，类本身就指向构造函数。
+
+
+
+构造函数的`prototype`属性，在 ES6 的“类”上面继续存在。事实上，类的所有方法都定义在类的`prototype`属性上面。
+
+```javascript
+class Point {
+  constructor() {
+    // ...
+  }
+
+  toString() {
+    // ...
+  }
+
+  toValue() {
+    // ...
+  }
+}
+
+// 等同于
+
+Point.prototype = {
+  constructor() {},
+  toString() {},
+  toValue() {},
+};
+```
+
+上面代码中，`constructor()`、`toString()`、`toValue()`这三个方法，其实都是定义在`Point.prototype`上面。
+
+因此，在类的实例上面调用方法，其实就是调用原型上的方法。
+
+```
+class B {}
+const b = new B();
+
+b.constructor === B.prototype.constructor // true
+```
+
+
+
+### 类的实例
+
+
+
+与 ES5 一样，类的所有实例共享一个原型对象。
+
+```
+var p1 = new Point(2,3);
+var p2 = new Point(3,2);
+
+p1.__proto__ === p2.__proto__
+//true
+```
+
+
+
+### 实例属性
+
+
+
+[ES2022](https://github.com/tc39/proposal-class-fields) 为类的实例属性，又规定了一种新写法。实例属性现在除了可以定义在`constructor()`方法里面的`this`上面，也可以定义在类内部的最顶层。
+
+```javascript
+// 原来的写法
+class IncreasingCounter {
+  constructor() {
+    this._count = 0;
+  }
+  get value() {
+    console.log('Getting the current value!');
+    return this._count;
+  }
+  increment() {
+    this._count++;
+  }
+}
+```
+
+上面示例中，实例属性`_count`定义在`constructor()`方法里面的`this`上面。
+
+现在的新写法是，这个属性也可以定义在类的最顶层，其他都不变。
+
+```js
+class IncreasingCounter {
+  _count = 0;
+  get value() {
+    console.log('Getting the current value!');
+    return this._count;
+  }
+  increment() {
+    this._count++;
+  }
+}
+```
+
+上面代码中，实例属性`_count`与取值函数`value()`和`increment()`方法，处于同一个层级。这时，不需要在实例属性前面加上`this`。
+
+注意，新写法定义的属性是实例对象自身的属性，而不是定义在实例对象的原型上面。
+
+这种新写法的好处是，所有实例对象自身的属性都定义在类的头部，看上去比较整齐，一眼就能看出这个类有哪些实例属性。
+
+```js
+class foo {
+  bar = 'hello';
+  baz = 'world';
+
+  constructor() {
+    // ...
+  }
+}
+```
+
+上面的代码，一眼就能看出，`foo`类有两个实例属性，一目了然。另外，写起来也比较简洁。
+
+
+
+### ES6继承的原理
+
+[寄生组合继承](https://www.bilibili.com/video/BV1mH4y1Q7Z7/?p=11&share_source=copy_web&vd_source=b23f8a9cd162ff7a94424d5480360ac9)
+
+[类的 prototype 属性和\__proto__属性](https://wangdoc.com/es6/class-extends#%E7%B1%BB%E7%9A%84-prototype-%E5%B1%9E%E6%80%A7%E5%92%8C__proto__%E5%B1%9E%E6%80%A7)
+
+![image-20240417014757081](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240417014757081.png)
+
+> extends的ES5实现
+
+1. 使用`Object.call`函数将要构建的子类实例的this传给父类构造函数, 借父类构造函数构造子类实例, 使得子类实例拥有父类的==实例属性==
+2. 将子类的`__proto__`设置为父类本身,这使得子类可以通过原型链访问父类==静态属性==
+3. 使用`Object.create`函数创建一个新对象, 该对象的`__proto__`属性设置为父类构造函数的`prototype` ,然后将`__proto__`属性里的`constructor`设置为子类构造函数. 然后将构建好的对象作为子类构造函数的`prototype` , 这使得子类实例可以通过原型链访问父类==原型方法==
+
+以上行为使得下面的语句成立:
+
+~~~js
+class A {
+}
+
+class B extends A {
+}
+
+B.__proto__ === A // true
+B.prototype.__proto__ === A.prototype // true
+~~~
+
+
 
 
 
