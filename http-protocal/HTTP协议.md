@@ -78,7 +78,7 @@ Content-Type: text/plain
 Hello World! My payload includes a trailing CRLF.
 ```
 
-![图片](C:\Users\86187\Desktop\instructions\HTTP协议.assets\640.webp)
+![图片](./imgs\640.webp)
 
 
 
@@ -90,7 +90,7 @@ Hello World! My payload includes a trailing CRLF.
 
 可以通过Python代码模拟各种请求参数和header，发送给这个网站，再来验证发送的是否正确。
 
-![图片](C:\Users\86187\Desktop\instructions\HTTP协议.assets\640-1712319020487-3.webp)
+![图片](./imgs\640-1712319020487-3.webp)
 
 
 
@@ -107,7 +107,7 @@ Hello World! My payload includes a trailing CRLF.
 - 浏览器先请求www.baidu.com获得了HTML
 - 然后发起了多个其他请求去获取css, woff2, png等其他资源
 
-![图片](C:\Users\86187\Desktop\instructions\HTTP协议.assets\640-1712319100646-6.webp)
+![图片](./imgs\640-1712319100646-6.webp)
 
 这种特点给爬虫带来困难：
 
@@ -173,7 +173,7 @@ HTTP1.1 新增了六种请求方法：OPTIONS、PUT、PATCH、DELETE、TRACE 和
 
 **GET** 请求的参数都是放在URL中的，网页看见：
 
-![图片](C:\Users\86187\Desktop\instructions\HTTP协议.assets\640-1712319100646-7.webp)image-20210410065802606
+![图片](./imgs\640-1712319100646-7.webp)image-20210410065802606
 
 请求参数是以键值对的形式出现，一般形式为：
 
@@ -367,7 +367,7 @@ Content-Type: multipart/form-data; boundary=something
 
 实例：
 
-![图片](C:\Users\86187\Desktop\instructions\HTTP协议.assets\640-1712319100646-8.webp)img
+![图片](./imgs\640-1712319100646-8.webp)img
 
 常见的媒体格式类型如下：
 

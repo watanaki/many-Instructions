@@ -447,7 +447,7 @@ vim 中的文本对象主要有这一些：
 
 ## 折叠
 
-<img src="C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240328171753200.png" alt="image-20240328171753200" style="zoom: 67%;" />
+<img src="./imgs/foldBlock.png" alt="image-20240328171753200" style="zoom: 67%;" />
 
 
 
@@ -492,7 +492,7 @@ vim 中的文本对象主要有这一些：
 | `<leader><leader> e`        | End of word forwards  	 |
 | `<leader><leader> ge`       | End of word backwards |
 
-![image-20240409225215711](C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240409225215711.png)
+![image-20240409225215711](./imgs/easy-motion.png)
 
 ### [vim-surround](https://github.com/VSCodeVim/Vim?tab=readme-ov-file#vim-surround)
 
@@ -677,15 +677,15 @@ hello
 
 > yii
 
-![image-20240328231202276](C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240328231202276.png)
+![image-20240328231202276](./imgs\indent-object01.png)
 
 > yai
 
-![image-20240328231244507](C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240328231244507.png)
+![image-20240328231244507](./imgs\indent-object02.png)
 
 > ya工
 
-![image-20240328231503736](C:\Users\86187\Desktop\instructions\VSCodeVim速查.assets\image-20240328231503736.png)
+![image-20240328231503736](./imgs\indent-object03.png)
 
 
 

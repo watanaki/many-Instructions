@@ -70,11 +70,11 @@ git clone [url]
 
 ## Git工作流
 
-![img](C:\Users\86187\Desktop\instructions\Git使用说明.assets\git-command.jpg)
+![img](./imgs/git-command.jpg)
 
 
 
-![The lifecycle of the status of your files](C:\Users\86187\Desktop\instructions\Git使用说明.assets\lifecycle.png)
+![The lifecycle of the status of your files](./imgs/lifecycle.png)
 
 ## Git status
 
@@ -366,15 +366,15 @@ $ git commit -m 'The initial commit of my project'
 
 现在，Git 仓库中有五个对象：三个 *blob* 对象（保存着文件快照）、一个 **树** 对象 （记录着目录结构和 blob 对象索引）以及一个 **提交** 对象（包含着指向前述树对象的指针和所有提交信息）。
 
-![A commit and its tree](C:\Users\86187\Desktop\instructions\Git使用说明.assets\commit-and-tree.png)
+![A commit and its tree](./imgs/commit-and-tree.png)
 
 做些修改后再次提交，那么这次产生的提交对象会包含一个指向上次提交对象（父对象）的指针。
 
-![提交对象及其父对象。](C:\Users\86187\Desktop\instructions\Git使用说明.assets\commits-and-parents.png)
+![提交对象及其父对象。](./imgs/commits-and-parents.png)
 
 Git 的分支，其实本质上仅仅是指向提交对象的可变指针。 Git 的默认分支名字是 `master`。 在多次提交操作之后，你其实已经有一个指向最后一次提交的 `master` 分支。 `master` 分支会在每次提交时自动向前移动。
 
-![A branch and its commit history](C:\Users\86187\Desktop\instructions\Git使用说明.assets\branch-and-history.png)
+![A branch and its commit history](./imgs/branch-and-history.png)
 
 
 
@@ -481,7 +481,7 @@ git merge <branchName>
 
 比如:
 
-<img src="C:\Users\86187\Desktop\instructions\Git使用说明.assets\image-20240421000435454.png" alt="image-20240421000435454" style="zoom:50%;" />
+<img src="./imgs/image-20240421000435454.png" alt="image-20240421000435454" style="zoom:50%;" />
 
 远端有两个分支:main edit
 

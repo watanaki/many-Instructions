@@ -4,7 +4,7 @@
 
 ## 声明变量
 
-![image-20240402135928280](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240402135928280.png)
+![image-20240402135928280](./imgs/image-20240402135928280.png)
 
 ### var
 
@@ -64,7 +64,7 @@ var x = 10;
 
 `let`声明的变量不可重复声明
 
-![image-20240402141509708](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240402141509708.png)
+![image-20240402141509708](./imgs/image-20240402141509708.png)
 
 `let`声明变量不会被提升
 
@@ -402,7 +402,7 @@ console.log(box1)
 console.log(Object.getPrototypeOf(box1))
 ```
 
-![image-20240407150842252](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240407150842252.png)
+![image-20240407150842252](./imgs/image-20240407150842252.png)
 
 使用this声明的变量和方法都是属于实例的
 
@@ -531,7 +531,7 @@ getData();
 console.log('End');
 ~~~
 
-![image-20240413234839769](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240413234839769.png)
+![image-20240413234839769](./imgs/image-20240413234839769.png)
 
 
 
@@ -697,7 +697,7 @@ class foo {
 
 [类的 prototype 属性和\__proto__属性](https://wangdoc.com/es6/class-extends#%E7%B1%BB%E7%9A%84-prototype-%E5%B1%9E%E6%80%A7%E5%92%8C__proto__%E5%B1%9E%E6%80%A7)
 
-![image-20240417014757081](C:\Users\86187\Desktop\instructions\JavaScript学习.assets\image-20240417014757081.png)
+![image-20240417014757081](./imgs/image-20240417014757081.png)
 
 > extends的ES5实现
 

@@ -28,7 +28,7 @@ new Promise(( resolve, reject ) =>{})
 	- reject
 	
 
-![](C:\Users\86187\Desktop\instructions\Promise.assets\promises.png)
+![](./imgs/promises.png)
 
 ## Promise的状态
 
@@ -57,7 +57,7 @@ const p = new Promise((resolve, reject) => {
 console.dir(p) // fulfilled
 ~~~
 
-![image-20240407002253988](C:\Users\86187\Desktop\instructions\Promise.assets\image-20240407002253988.png)
+![image-20240407002253988](./imgs/image-20240407002253988.png)
 
 
 
